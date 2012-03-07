@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <parameters>
+        <parameter key="vespolina.product_handler.subscription.class">Vespolina\ProductSubscriptionBundle\Handler\SubscriptionHandler</parameter>
+        <parameter key="vespolina.product.subscription.class">Application\Vespolina\ProductSubscriptionBundle\Document\Subscription</parameter>
+    </parameters>
+
+    <services>
+        <service id="vespolina.product_handler.subscription" class="%vespolina.product_handler.subscription.class%">
+            <argument>%vespolina.product.subscription.class%</argument>
+            <tag name="vespolina.product_handler" />
+        </service>
+    </services>
+
+</container>

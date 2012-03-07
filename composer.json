@@ -1,0 +1,29 @@
+{
+    "name": "vespolina/product-subscription-bundle",
+    "type": "symfony-bundle",
+    "description": "Vespolina product bundle for subscription products.",
+    "keywords": ["shop", "ecommerce", "product", "subscription"],
+    "homepage": "http://vespolina-project.org",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Vespolina Community",
+            "homepage": "https://github.com/vespolina/VespolinaProductSubscriptionBundle/contributors"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.2",
+        "symfony/framework-bundle": "2.*",
+        "symfony/security-bundle": "2.*"
+        "vespolina/product-bundle": "*"
+    },
+    "suggest": {
+        "symfony/doctrine-bundle": "*",
+        "symfony/mongodb-odm-bundle": "*",
+        "doctrine/couchdb-odm-bundle": "*"
+    },
+    "autoload": {
+        "psr-0": { "Vespolina\\ProductSubscriptionBundle": "" }
+    },
+    "target-dir": "Vespolina/ProductSubscriptionBundle"
+}
