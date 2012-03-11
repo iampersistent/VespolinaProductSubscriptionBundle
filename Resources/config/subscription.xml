@@ -15,5 +15,4 @@
             <tag name="vespolina.product_handler" />
         </service>
     </services>
-
 </container>
