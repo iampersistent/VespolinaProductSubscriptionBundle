@@ -25,7 +25,7 @@ class CheckoutHandler extends BaseCheckoutHandler
         return $recurringPayment;
     }
 
-    public function processorSuccess($cartableItem, $recurringInstructions, $response)
+    public function processorSuccess($cartableItem, $recurringInstructions)
     {
         // todo:  tie into ServiceAgreement to update new discounts
 
