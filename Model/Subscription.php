@@ -8,7 +8,7 @@
 namespace Vespolina\ProductSubscriptionBundle\Model;
 
 use Vespolina\ProductBundle\Model\Product;
-use Vespolina\ProductSubscriptionBundle\Model\RecurInterface;
+use JMS\Payment\CoreBundle\Model\RecurringTransactionInterface;
 
 use Vespolina\ProductSubscriptionBundle\Model\RecurringInterface;
 
@@ -16,7 +16,8 @@ class Subscription extends Product implements RecurringInterface
 {
     protected $recur;
 
-    public function setRecur(RecurInterface $recur)
+    // yes, this is a hack. I will fix it, I promise.
+    public function setRecur(RecurringTransactionInterface $recur)
     {
         $this->recur = $recur;
     }
