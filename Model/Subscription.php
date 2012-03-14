@@ -25,4 +25,9 @@ class Subscription extends Product implements RecurringInterface
     {
         return $this->recur;
     }
+
+    public function getType()
+    {
+        return 'subscription';
+    }
 }
