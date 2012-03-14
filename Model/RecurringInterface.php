@@ -6,9 +6,9 @@
  * with this source code in the file LICENSE.
  */
 
-namespace Vespolina\ProductBundle\Model;
+namespace Vespolina\ProductSubscriptionBundle\Model;
 
-use Vespolina\ProductBundle\Model\RecurInterface;
+use Vespolina\ProductSubscriptionBundle\Model\RecurInterface;
 
 /**
  * @author Richard D Shank <develop@zestic.com>
