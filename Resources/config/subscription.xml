@@ -5,14 +5,22 @@
            xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
 
     <parameters>
-        <parameter key="vespolina.product_handler.subscription.class">Vespolina\ProductSubscriptionBundle\Handler\SubscriptionHandler</parameter>
         <parameter key="vespolina.product.subscription.class">Application\Vespolina\ProductSubscriptionBundle\Document\Subscription</parameter>
+        <parameter key="vespolina.product_handler.subscription.class">Vespolina\ProductSubscriptionBundle\Handler\ProductHandler</parameter>
+        <parameter key="vespolina.cart_handler.subscription.class">Vespolina\ProductSubscriptionBundle\Handler\CartHandler</parameter>
+        <parameter key="vespolina.checkout_handler.subscription.class">Vespolina\ProductSubscriptionBundle\Handler\CheckoutHandler</parameter>
     </parameters>
 
     <services>
         <service id="vespolina.product_handler.subscription" class="%vespolina.product_handler.subscription.class%">
             <argument>%vespolina.product.subscription.class%</argument>
             <tag name="vespolina.product_handler" />
+        </service>
+        <service id="vespolina.cart_handler.subscription" class="%vespolina.cart_handler.subscription.class%">
+            <tag name="vespolina.cart_handler" />
+        </service>
+        <service id="vespolina.checkout_handler.subscription" class="%vespolina.checkout_handler.subscription.class%">
+            <tag name="vespolina.checkout_handler" />
         </service>
     </services>
 </container>
