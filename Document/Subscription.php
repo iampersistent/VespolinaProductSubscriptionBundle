@@ -8,9 +8,9 @@
 
 namespace Vespolina\ProductSubscriptionBundle\Document;
 
-use Vespolina\ProductBundle\Document\BaseProduct;
+use Vespolina\ProductSubscriptionBundle\Model\Subscription as BaseSubscription;
 
-class Subscription extends BaseProduct
+class Subscription extends BaseSubscription
 {
 
 }

@@ -6,7 +6,7 @@
  * with this source code in the file LICENSE.
  */
 
-namespace Vespolina\ProductBundle\Model;
+namespace Vespolina\ProductSubscriptionBundle\Model;
 
 use Vespolina\ProductBundle\Model\RecurInterface;
 

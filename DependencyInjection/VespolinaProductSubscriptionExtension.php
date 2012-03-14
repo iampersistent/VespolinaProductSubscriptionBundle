@@ -35,8 +35,10 @@ class VespolinaProductSubscriptionExtension extends Extension
             $container->setParameter('vespolina.product.subscription.class', $config['product_class']);
         }
 
-        if (isset($config['product_handler'])) {
-            $container->setParameter('vespolina.product_handler.subscription.class', $config['product_handler']);
+        foreach (array('cart_handler', 'checkout_handler', 'product_handler') as $handler) {
+            if (isset($config[$handler])) {
+                $container->setParameter(sprintf('vespolina.%s.subscription.class', $handler), $config[$handler]);
+            }
         }
     }
 }

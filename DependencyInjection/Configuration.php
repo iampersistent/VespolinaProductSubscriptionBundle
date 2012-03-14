@@ -29,6 +29,8 @@ class Configuration implements ConfigurationInterface
             ->children()
                 ->scalarNode('product_class')->end()
                 ->scalarNode('product_handler')->end()
+                ->scalarNode('cart_handler')->end()
+                ->scalarNode('checkout_handler')->end()
             ->end()
         ->end();
 

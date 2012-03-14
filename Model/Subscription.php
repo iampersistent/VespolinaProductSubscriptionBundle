@@ -8,9 +8,9 @@
 namespace Vespolina\ProductSubscriptionBundle\Model;
 
 use Vespolina\ProductBundle\Model\Product;
-use Vespolina\ProductBundle\Model\RecurInterface;
+use Vespolina\ProductSubscriptionBundle\Model\RecurInterface;
 
-use Vespolina\ProductBundle\Model\RecurringInterface;
+use Vespolina\ProductSubscriptionBundle\Model\RecurringInterface;
 
 class Subscription extends Product implements RecurringInterface
 {
@@ -24,5 +24,10 @@ class Subscription extends Product implements RecurringInterface
     public function getRecur()
     {
         return $this->recur;
+    }
+
+    public function getType()
+    {
+        return 'subscription';
     }
 }
