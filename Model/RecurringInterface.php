@@ -19,14 +19,14 @@ interface RecurringInterface
     /**
      * Set the Recur object for this recurring product
      *
-     * @param Vespolina\ProductBundle\Model\RecurInterface $recur
+     * @param Vespolina\ProductSubscriptionBundle\Model\RecurInterface $recur
      */
     function setRecur(RecurringTransactionInterface $recur);
 
     /**
      * Return the Recur object for this recurring product
      *
-     * @return Vespolina\ProductBundle\Model\RecurInterface
+     * @return Vespolina\ProductSubscriptionBundle\Model\RecurInterface
      */
     function getRecur();
 }
