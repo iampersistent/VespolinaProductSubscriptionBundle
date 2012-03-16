@@ -8,6 +8,7 @@
 
 namespace Vespolina\ProductSubscriptionBundle\Model;
 
+use JMS\Payment\CoreBundle\Model\RecurringInstructionInterface;
 use JMS\Payment\CoreBundle\Model\RecurringTransactionInterface;
 use Vespolina\ProductSubscriptionBundle\Model\RecurInterface;
 
@@ -16,17 +17,13 @@ use Vespolina\ProductSubscriptionBundle\Model\RecurInterface;
  */
 interface RecurringInterface
 {
-    /**
-     * Set the Recur object for this recurring product
-     *
-     * @param Vespolina\ProductSubscriptionBundle\Model\RecurInterface $recur
-     */
-    function setRecur(RecurringTransactionInterface $recur);
+    function setPaymentInstruction(RecurringInstructionInterface $instruction);
 
-    /**
-     * Return the Recur object for this recurring product
-     *
-     * @return Vespolina\ProductSubscriptionBundle\Model\RecurInterface
-     */
-    function getRecur();
+    function getPaymentInstruction();
+
+    function addPaymentTransaction(RecurringTransactionInterface $transaction);
+
+    function getPaymentTransactions();
+
+    function getPaymentTransaction(array $parameters);
 }

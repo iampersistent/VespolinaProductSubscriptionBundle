@@ -8,27 +8,44 @@
 namespace Vespolina\ProductSubscriptionBundle\Model;
 
 use Vespolina\ProductBundle\Model\Product;
+use JMS\Payment\CoreBundle\Model\RecurringInstructionInterface;
 use JMS\Payment\CoreBundle\Model\RecurringTransactionInterface;
 
 use Vespolina\ProductSubscriptionBundle\Model\RecurringInterface;
 
 class Subscription extends Product implements RecurringInterface
 {
-    protected $recur;
+    protected $paymentInstruction;
+    protected $paymentTransactions;
 
-    // yes, this is a hack. I will fix it, I promise.
-    public function setRecur(RecurringTransactionInterface $recur)
+    public function setPaymentInstruction(RecurringInstructionInterface $instruction)
     {
-        $this->recur = $recur;
+        $this->paymentInstruction = $instruction;
     }
 
-    public function getRecur()
+    public function getPaymentInstruction()
     {
-        return $this->recur;
+        return $this->paymentInstruction;
+    }
+
+    public function addPaymentTransaction(RecurringTransactionInterface $transaction)
+    {
+        $this->paymentTransactions[] = $transaction;
+    }
+
+    public function getPaymentTransactions()
+    {
+        return $this->paymentTransactions;
+    }
+
+    public function getPaymentTransaction(array $parameters)
+    {
+        // todo find by different parameters, use mongodb like syntax
     }
 
     public function getType()
     {
         return 'subscription';
     }
+
 }
