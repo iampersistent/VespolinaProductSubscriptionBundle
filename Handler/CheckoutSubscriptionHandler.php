@@ -9,20 +9,21 @@ namespace Vespolina\ProductSubscriptionBundle\Handler;
 
 use Vespolina\CheckoutBundle\Handler\CheckoutHandler as BaseCheckoutHandler;
 
-class CheckoutHandler extends BaseCheckoutHandler
+class CheckoutSubscriptionHandler extends BaseCheckoutHandler
 {
     public function getPaymentInstructions($cartableItem)
     {
-        // todo: getRecurringTransaction
-        $recurringPayment = $cartableItem->getRecur(); // todo: this is SO wrong
+        $instruction = $cartableItem->getRecurringInstruction();
 
-        // set recurring information
-        $recurringPayment->setStartDate(date('Y-m-d').'T00:00:00Z');
-        $recurringPayment->setCreditCardProfile($this->checkoutManager->getCreditCard());
-        //$recurringPayment->setProvider($provider);
+        // set card
+        $instruction->setCreditCardProfile($this->checkoutManager->getCreditCard());
 
-        // getRecurringTransaction
-        return $recurringPayment;
+        return $instruction;
+    }
+
+    public function initializeCharge($instruction)
+    {
+        return $this->checkoutManager->getPaymentProcessor()->initializeRecurring($instruction, 123);
     }
 
     public function processorSuccess($cartableItem, $recurringInstructions)
@@ -35,5 +36,4 @@ class CheckoutHandler extends BaseCheckoutHandler
     {
         return 'subscription';
     }
-
 }
