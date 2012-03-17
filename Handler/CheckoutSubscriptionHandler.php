@@ -32,7 +32,7 @@ class CheckoutSubscriptionHandler extends BaseCheckoutHandler
 
     }
 
-    public function getType()
+    public function getTypes()
     {
         return 'subscription';
     }
