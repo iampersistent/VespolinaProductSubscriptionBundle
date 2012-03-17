@@ -8,7 +8,8 @@
         <parameter key="vespolina.product.subscription.class">Application\Vespolina\ProductSubscriptionBundle\Document\Subscription</parameter>
         <parameter key="vespolina.product_handler.subscription.class">Vespolina\ProductSubscriptionBundle\Handler\ProductHandler</parameter>
         <parameter key="vespolina.cart_handler.subscription.class">Vespolina\ProductSubscriptionBundle\Handler\CartHandler</parameter>
-        <parameter key="vespolina.checkout_handler.subscription.class">Vespolina\ProductSubscriptionBundle\Handler\CheckoutHandler</parameter>
+        <parameter key="vespolina.checkout_handler.periodic.class">Vespolina\ProductSubscriptionBundle\Handler\CheckoutPeriodicHandler</parameter>
+        <parameter key="vespolina.checkout_handler.subscription.class">Vespolina\ProductSubscriptionBundle\Handler\CheckoutSubscriptionHandler</parameter>
     </parameters>
 
     <services>
@@ -18,6 +19,9 @@
         </service>
         <service id="vespolina.cart_handler.subscription" class="%vespolina.cart_handler.subscription.class%">
             <tag name="vespolina.cart_handler" />
+        </service>
+        <service id="vespolina.checkout_handler.periodic" class="%vespolina.checkout_handler.periodic.class%">
+            <tag name="vespolina.checkout_handler" />
         </service>
         <service id="vespolina.checkout_handler.subscription" class="%vespolina.checkout_handler.subscription.class%">
             <tag name="vespolina.checkout_handler" />
